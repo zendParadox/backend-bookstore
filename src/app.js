@@ -1,13 +1,12 @@
-require("dotenv").config();
 const { authenticateToken } = require("./middlewares/authMiddleware");
 const cryptoRoutes = require("./routes/cryptoRoutes");
-
-const express = require("express");
-const app = express();
-
 const bookRoutes = require("./routes/bookRoutes");
 const authRoutes = require("./routes/authRoutes");
 const sequelize = require("./config/database");
+
+require("dotenv").config();
+const express = require("express");
+const app = express();
 
 app.use(express.json());
 app.use("/api/books", bookRoutes);
